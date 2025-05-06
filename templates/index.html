@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Segmentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+
+        .container {
+            text-align: center;
+            padding: 30px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            background-color: white;
+        }
+
+        input[type="number"], input[type="submit"] {
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .result-box {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Customer Segmentation</h1>
+    <form method="POST">
+        <input type="number" name="age" placeholder="Age" required><br>
+        <input type="number" name="salary" placeholder="Salary" required><br>
+        <input type="number" name="score" placeholder="Spending Score (1-100)" required><br>
+        <input type="submit" value="Predict Cluster"><br>
+    </form>
+
+    {% if cluster_name %}
+    <div class="result-box">
+        <h3>Predicted Cluster:</h3>
+        <p>{{ cluster_name }}</p>
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
